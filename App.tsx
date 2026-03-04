@@ -1,44 +1,65 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- */
-
-import { NewAppScreen } from '@react-native/new-app-screen';
-import { StatusBar, StyleSheet, useColorScheme, View } from 'react-native';
+import React from 'react';
 import {
-  SafeAreaProvider,
-  useSafeAreaInsets,
-} from 'react-native-safe-area-context';
+  SafeAreaView,
+  StatusBar,
+  StyleSheet,
+  Text,
+  View,
+  useColorScheme,
+} from 'react-native';
 
-function App() {
+const App = () => {
   const isDarkMode = useColorScheme() === 'dark';
 
   return (
-    <SafeAreaProvider>
-      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-      <AppContent />
-    </SafeAreaProvider>
-  );
-}
+    <SafeAreaView
+      style={[
+        styles.container,
+        { backgroundColor: isDarkMode ? '#121212' : '#ffffff' },
+      ]}>
 
-function AppContent() {
-  const safeAreaInsets = useSafeAreaInsets();
-
-  return (
-    <View style={styles.container}>
-      <NewAppScreen
-        templateFileName="App.tsx"
-        safeAreaInsets={safeAreaInsets}
+      <StatusBar
+        barStyle={isDarkMode ? 'light-content' : 'dark-content'}
       />
-    </View>
+
+      <View style={styles.content}>
+        <Text
+          style={[
+            styles.title,
+            { color: isDarkMode ? '#ffffff' : '#000000' },
+          ]}>
+          🚀 Welcome Satyam
+        </Text>
+
+        <Text
+          style={[
+            styles.subtitle,
+            { color: isDarkMode ? '#cccccc' : '#555555' },
+          ]}>
+          Your React Native project is ready.
+        </Text>
+      </View>
+
+    </SafeAreaView>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+  },
+  content: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  title: {
+    fontSize: 24,
+    fontWeight: '700',
+    marginBottom: 10,
+  },
+  subtitle: {
+    fontSize: 16,
   },
 });
 
