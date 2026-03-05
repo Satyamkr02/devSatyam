@@ -1,21 +1,19 @@
 import React from 'react';
-import { View, Pressable } from 'react-native';
+import { View } from 'react-native';
 import { H1 } from '../components/CustomTags/H1';
-import { Body } from '../components/CustomTags/Body';
+import ThemeSwitch from '../components/Common/ThemeSwitch';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
-export default function HomeScreen({ navigation }) {
+export default function HomeScreen() {
   return (
+    // <SafeAreaView className="flex-1">
     <View className="flex-1 items-center justify-center bg-background dark:bg-background-dark">
-      <H1 className="text-3xl font-heading-bold text-foreground dark:text-foreground-dark mb-6">
-        Home Screen
+      <H1 className="text-foreground dark:text-foreground-dark mb-6">
+        Theme Demo
       </H1>
 
-      <Pressable
-        onPress={() => navigation.navigate('Profile')}
-        className="bg-primary px-6 py-3 rounded-xl"
-      >
-        <Body className="text-black font-body-semibold">Go To Profile</Body>
-      </Pressable>
+      <ThemeSwitch />
     </View>
+    // </SafeAreaView>
   );
 }
