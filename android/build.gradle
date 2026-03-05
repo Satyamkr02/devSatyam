@@ -19,3 +19,18 @@ buildscript {
 }
 
 apply plugin: "com.facebook.react.rootproject"
+
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+        // ⭐ REQUIRED for AsyncStorage
+        maven {
+            url = uri(
+                project(":react-native-async-storage_async-storage")
+                    .file("local_repo")
+            )
+        }
+    }
+}

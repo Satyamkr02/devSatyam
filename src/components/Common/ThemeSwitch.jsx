@@ -25,15 +25,6 @@ export default function ThemeSwitch() {
       >
         <Text>Light</Text>
       </Pressable>
-
-      <Pressable
-        onPress={() => changeTheme(THEME_OPTIONS.SYSTEM)}
-        className={`px-4 py-2 rounded-lg ${
-          theme === 'system' ? 'bg-primary' : 'bg-gray-300'
-        }`}
-      >
-        <Text>System</Text>
-      </Pressable>
     </View>
   );
 }

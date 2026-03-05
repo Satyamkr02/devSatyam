@@ -17,19 +17,33 @@ export const ThemeProvider = ({ children }) => {
     loadTheme();
   }, []);
 
+  //   useEffect(() => {
+  //     if (theme === THEME_OPTIONS.SYSTEM) {
+  //       const active = systemTheme ?? 'dark';
+
+  //       setResolvedTheme(active);
+
+  //       // reset override so NativeWind follows system
+  //       setColorScheme(undefined);
+  //     } else {
+  //       setResolvedTheme(theme);
+
+  //       // force theme
+  //       setColorScheme(theme);
+  //     }
+  //   }, [theme, systemTheme]);
   useEffect(() => {
+    let activeTheme;
+
     if (theme === THEME_OPTIONS.SYSTEM) {
-      setResolvedTheme(systemTheme ?? 'dark');
-
-      // NativeWind follows device theme automatically
-      setColorScheme('system');
+      activeTheme = systemTheme ?? 'dark';
     } else {
-      setResolvedTheme(theme);
-
-      // force dark/light
-      setColorScheme(theme);
+      activeTheme = theme;
     }
-  }, [theme, systemTheme, setColorScheme]);
+
+    setResolvedTheme(activeTheme);
+    setColorScheme(activeTheme);
+  }, [theme, systemTheme]);
 
   const loadTheme = async () => {
     const saved = await AsyncStorage.getItem(STORAGE_KEY);
