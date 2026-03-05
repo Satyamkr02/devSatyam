@@ -1,10 +1,21 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  // NOTE: Update this to include the paths to all files that contain Nativewind classes.
   content: ['./App.tsx', './src/**/*.{js,jsx,ts,tsx}'],
   presets: [require('nativewind/preset')],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        heading: ['SpaceGrotesk-Regular'],
+        'heading-light': ['SpaceGrotesk-Light'],
+        'heading-bold': ['SpaceGrotesk-Bold'],
+        'heading-semibold': ['SpaceGrotesk-SemiBold'],
+
+        body: ['Manrope-Regular'],
+        'body-light': ['Manrope-Light'],
+        'body-bold': ['Manrope-Bold'],
+        'body-semibold': ['Manrope-SemiBold'],
+      },
+    },
   },
   plugins: [],
 };

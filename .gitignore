@@ -73,3 +73,10 @@ yarn-error.log
 !.yarn/releases
 !.yarn/sdks
 !.yarn/versions
+
+-------------------------
+React Native asset linking
+-------------------------
+
+android/link-assets-manifest.json
+ios/link-assets-manifest.json

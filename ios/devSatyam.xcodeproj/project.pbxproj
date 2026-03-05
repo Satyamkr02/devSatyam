@@ -9,21 +9,37 @@
 /* Begin PBXBuildFile section */
 		0C80B921A6F3F58F76C31292 /* libPods-devSatyam.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DCACB8F33CDC322A6C60F78 /* libPods-devSatyam.a */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
+		48B8D100AFFC4DF985CEDDFA /* Manrope-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C73E0E30A9EF479C8D460193 /* Manrope-SemiBold.ttf */; };
+		5D518DB4793F42289DA4D0E4 /* Manrope-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 09C7EDC33CCD4C78BF2B4A15 /* Manrope-Light.ttf */; };
+		721D0C41A9114A48B6095E96 /* Manrope-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8D8FB1E1D8964FA2875DF754 /* Manrope-Bold.ttf */; };
 		761780ED2CA45674006654EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761780EC2CA45674006654EE /* AppDelegate.swift */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		8A26E293B55F423FA18CCA61 /* SpaceGrotesk-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 932CB62536964DE68C4A0E47 /* SpaceGrotesk-SemiBold.ttf */; };
+		8CE6B68832E64FD89DC7CA96 /* SpaceGrotesk-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D647E7FC76FF497FABC035DB /* SpaceGrotesk-Bold.ttf */; };
+		914DA571C49747F8A7AB6232 /* SpaceGrotesk-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A773F2529448471E885F8A44 /* SpaceGrotesk-Light.ttf */; };
+		A004EE9F3D4E499E85F0A93A /* SpaceGrotesk-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 72AA5AD94B7441B3ACB1E1B1 /* SpaceGrotesk-Regular.ttf */; };
+		E2AE6F84D01A42658556F3C9 /* Manrope-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2F43D4E31A484942A0FD7C83 /* Manrope-Regular.ttf */; };
 		FDCAB9871D1638916BA62A3A /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		09C7EDC33CCD4C78BF2B4A15 /* Manrope-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Manrope-Light.ttf"; path = "../src/assets/fonts/Manrope-Light.ttf"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* devSatyam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = devSatyam.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = devSatyam/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = devSatyam/Info.plist; sourceTree = "<group>"; };
 		13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = PrivacyInfo.xcprivacy; path = devSatyam/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		2F43D4E31A484942A0FD7C83 /* Manrope-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Manrope-Regular.ttf"; path = "../src/assets/fonts/Manrope-Regular.ttf"; sourceTree = "<group>"; };
 		3B4392A12AC88292D35C810B /* Pods-devSatyam.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-devSatyam.debug.xcconfig"; path = "Target Support Files/Pods-devSatyam/Pods-devSatyam.debug.xcconfig"; sourceTree = "<group>"; };
 		5709B34CF0A7D63546082F79 /* Pods-devSatyam.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-devSatyam.release.xcconfig"; path = "Target Support Files/Pods-devSatyam/Pods-devSatyam.release.xcconfig"; sourceTree = "<group>"; };
 		5DCACB8F33CDC322A6C60F78 /* libPods-devSatyam.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-devSatyam.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		72AA5AD94B7441B3ACB1E1B1 /* SpaceGrotesk-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "SpaceGrotesk-Regular.ttf"; path = "../src/assets/fonts/SpaceGrotesk-Regular.ttf"; sourceTree = "<group>"; };
 		761780EC2CA45674006654EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = devSatyam/AppDelegate.swift; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = devSatyam/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		8D8FB1E1D8964FA2875DF754 /* Manrope-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Manrope-Bold.ttf"; path = "../src/assets/fonts/Manrope-Bold.ttf"; sourceTree = "<group>"; };
+		932CB62536964DE68C4A0E47 /* SpaceGrotesk-SemiBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "SpaceGrotesk-SemiBold.ttf"; path = "../src/assets/fonts/SpaceGrotesk-SemiBold.ttf"; sourceTree = "<group>"; };
+		A773F2529448471E885F8A44 /* SpaceGrotesk-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "SpaceGrotesk-Light.ttf"; path = "../src/assets/fonts/SpaceGrotesk-Light.ttf"; sourceTree = "<group>"; };
+		C73E0E30A9EF479C8D460193 /* Manrope-SemiBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Manrope-SemiBold.ttf"; path = "../src/assets/fonts/Manrope-SemiBold.ttf"; sourceTree = "<group>"; };
+		D647E7FC76FF497FABC035DB /* SpaceGrotesk-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "SpaceGrotesk-Bold.ttf"; path = "../src/assets/fonts/SpaceGrotesk-Bold.ttf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -39,6 +55,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1264410004D94014B9778C1E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				72AA5AD94B7441B3ACB1E1B1 /* SpaceGrotesk-Regular.ttf */,
+				2F43D4E31A484942A0FD7C83 /* Manrope-Regular.ttf */,
+				A773F2529448471E885F8A44 /* SpaceGrotesk-Light.ttf */,
+				C73E0E30A9EF479C8D460193 /* Manrope-SemiBold.ttf */,
+				932CB62536964DE68C4A0E47 /* SpaceGrotesk-SemiBold.ttf */,
+				09C7EDC33CCD4C78BF2B4A15 /* Manrope-Light.ttf */,
+				D647E7FC76FF497FABC035DB /* SpaceGrotesk-Bold.ttf */,
+				8D8FB1E1D8964FA2875DF754 /* Manrope-Bold.ttf */,
+			);
+			name = Resources;
+			path = "";
+			sourceTree = "<group>";
+		};
 		13B07FAE1A68108700A75B9A /* devSatyam */ = {
 			isa = PBXGroup;
 			children = (
@@ -75,6 +107,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				BBD78D7AC51CEA395F1C20DB /* Pods */,
+				1264410004D94014B9778C1E /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -161,6 +194,14 @@
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				FDCAB9871D1638916BA62A3A /* PrivacyInfo.xcprivacy in Resources */,
+				A004EE9F3D4E499E85F0A93A /* SpaceGrotesk-Regular.ttf in Resources */,
+				E2AE6F84D01A42658556F3C9 /* Manrope-Regular.ttf in Resources */,
+				914DA571C49747F8A7AB6232 /* SpaceGrotesk-Light.ttf in Resources */,
+				48B8D100AFFC4DF985CEDDFA /* Manrope-SemiBold.ttf in Resources */,
+				8A26E293B55F423FA18CCA61 /* SpaceGrotesk-SemiBold.ttf in Resources */,
+				5D518DB4793F42289DA4D0E4 /* Manrope-Light.ttf in Resources */,
+				8CE6B68832E64FD89DC7CA96 /* SpaceGrotesk-Bold.ttf in Resources */,
+				721D0C41A9114A48B6095E96 /* Manrope-Bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
