@@ -9,21 +9,20 @@ export default function ThemeSwitch() {
   return (
     <View className="flex-row gap-3">
       <Pressable
-        onPress={() => changeTheme(THEME_OPTIONS.DARK)}
-        className={`px-4 py-2 rounded-lg ${
-          theme === 'dark' ? 'bg-primary' : 'bg-gray-300'
-        }`}
-      >
-        <Text>Dark</Text>
-      </Pressable>
-
-      <Pressable
         onPress={() => changeTheme(THEME_OPTIONS.LIGHT)}
         className={`px-4 py-2 rounded-lg ${
           theme === 'light' ? 'bg-primary' : 'bg-gray-300'
         }`}
       >
         <Text>Light</Text>
+      </Pressable>
+      <Pressable
+        onPress={() => changeTheme(THEME_OPTIONS.DARK)}
+        className={`px-4 py-2 rounded-lg ${
+          theme === 'dark' ? 'bg-primary' : 'bg-gray-300'
+        }`}
+      >
+        <Text>Dark</Text>
       </Pressable>
     </View>
   );

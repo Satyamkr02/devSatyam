@@ -1,3 +1,5 @@
+const { COLORS } = require('./src/themes/colors');
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: 'class',
@@ -20,33 +22,29 @@ module.exports = {
       },
 
       colors: {
-        /*
-        DESIGN TOKENS
-        */
-
         background: {
-          DEFAULT: '#FFFFFF',
-          dark: '#000000',
+          DEFAULT: COLORS.background.light,
+          dark: COLORS.background.dark,
         },
 
         border: {
-          DEFAULT: '#E5E5E5',
-          dark: '#262626',
+          DEFAULT: COLORS.border.light,
+          dark: COLORS.border.dark,
         },
 
         foreground: {
-          DEFAULT: '#000000',
-          dark: '#FFFFFF',
+          DEFAULT: COLORS.foreground.light,
+          dark: COLORS.foreground.dark,
         },
 
         primary: {
-          DEFAULT: '#DEFF00',
-          dark: '#DEFF00',
+          DEFAULT: COLORS.primary.light,
+          dark: COLORS.primary.dark,
         },
 
         muted: {
-          DEFAULT: '#6B7280',
-          dark: '#9CA3AF',
+          DEFAULT: COLORS.muted.light,
+          dark: COLORS.muted.dark,
         },
       },
     },
