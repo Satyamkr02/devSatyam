@@ -25,7 +25,7 @@ export default function ThemeToggle() {
     setTimeout(() => {
       isAnimating.current = false;
     }, 250);
-  }, [theme]);
+  }, [theme, isDark, progress]);
 
   const toggleTheme = () => {
     if (isAnimating.current) return;

@@ -14,10 +14,16 @@ import ThemeToggle from '../components/Common/ThemeToggle';
 import { Globe, MoveUpRight } from 'lucide-react-native';
 import ProjectSection from '../components/HomeScreen/ProjectSection';
 import HeroSectionImage from '../assets/images/heroSectionImage.jpg';
+import CompaniesSection from '../components/HomeScreen/CompaniesSection';
+import SpinningText from '../components/Common/SpinningText';
+import WorkingExperienceSection from '../components/HomeScreen/WorkingExperienceSection';
 
 export default function HomeScreen() {
   return (
     <View className="flex-1 bg-background dark:bg-background-dark">
+      <View className="absolute right-6 top-20 z-50">
+        <ThemeToggle />
+      </View>
       <ScrollView
         showsVerticalScrollIndicator={false}
         contentContainerClassName="pb-32"
@@ -34,8 +40,19 @@ export default function HomeScreen() {
           className="relative w-full h-[520px] p-6"
           resizeMode="cover"
         >
-          <View className="absolute right-10 top-20">
+          {/* <View className="absolute right-10 top-20">
             <ThemeToggle />
+          </View> */}
+
+          <View className="absolute left-6 top-28">
+            <SpinningText
+              duration={15}
+              radius={70}
+              TextComponent={Body}
+              textProps={{ className: 'text-xs text-black' }}
+            >
+              Scroll to explore • Mobile App • React Native •
+            </SpinningText>
           </View>
 
           <H1 className="text-[60px] mt-[380px] font-bold text-white dark:text-primary ml-auto">
@@ -55,7 +72,7 @@ export default function HomeScreen() {
                 I'm a
               </Body>
 
-              <Body className="text-primary font-semibold leading-6">
+              <Body className="text-black dark:text-primary font-semibold leading-6">
                 Mobile App
               </Body>
 
@@ -124,6 +141,12 @@ export default function HomeScreen() {
               <H1 className="text-muted text-sm">Contact Me</H1>
               <MoveUpRight size={14} color={COLORS.muted.light} />
             </View>
+          </View>
+          <View className="flex w-full mt-[80px]">
+            <CompaniesSection />
+          </View>
+          <View className="flex w-full mt-[80px]">
+            <WorkingExperienceSection />
           </View>
           <View className="flex w-full mt-[80px]">
             <ProjectSection />
