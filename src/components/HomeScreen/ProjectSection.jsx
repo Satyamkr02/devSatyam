@@ -6,6 +6,7 @@ import { MoveUpRight } from 'lucide-react-native';
 import { COLORS } from '../../themes/colors';
 import { PROJECTS } from '../../data/projects';
 import { useNavigation } from '@react-navigation/native';
+import LinearGradient from 'react-native-linear-gradient';
 
 export default function ProjectSection() {
   const navigation = useNavigation();
@@ -31,38 +32,46 @@ export default function ProjectSection() {
               })
             }
           >
-            <View className="flex-col bg-grayLight/50 border border-border dark:border-dark rounded-2xl shadow-xl overflow-hidden mx-3">
+            <View className="flex-col bg-grayLight/50 border border-border dark:border-primary/50 rounded-2xl overflow-hidden mx-3">
+              {/* Image */}
               <Image
                 source={{ uri: project.image }}
                 className="w-full h-[180px]"
               />
 
-              <View className="flex-row justify-between px-4 py-4">
-                {/* LEFT CONTENT */}
-                <View className="flex-1 flex-col gap-0 pr-3">
-                  <Body className="text-foreground dark:text-foreground-dark text-3xl font-bold">
-                    {project.title}
-                  </Body>
+              {/* Gradient Background */}
+              <View className="relative">
+                {/* Gradient Overlay */}
+                <View className="absolute inset-0 bg-primary/5" />
 
-                  <Body className="text-foreground dark:text-foreground-dark text-sm">
-                    {project.description}
-                  </Body>
+                {/* Content */}
+                <View className="flex-row justify-between px-4 py-4">
+                  {/* LEFT CONTENT */}
+                  <View className="flex-1 flex-col pr-3">
+                    <Body className="text-foreground dark:text-foreground-dark text-3xl font-bold">
+                      {project.title}
+                    </Body>
 
-                  <View className="mt-2 flex-row flex-wrap gap-1">
-                    {project.tags.map((tag, index) => (
-                      <View
-                        key={index}
-                        className="bg-primary px-3 py-1 rounded-full"
-                      >
-                        <Text className="text-xs text-black">{tag}</Text>
-                      </View>
-                    ))}
+                    <Body className="text-foreground dark:text-foreground-dark text-sm">
+                      {project.description}
+                    </Body>
+
+                    <View className="mt-2 flex-row flex-wrap gap-1">
+                      {project.tags.map((tag, index) => (
+                        <View
+                          key={index}
+                          className="bg-primary px-3 py-1 rounded-full"
+                        >
+                          <Text className="text-xs text-black">{tag}</Text>
+                        </View>
+                      ))}
+                    </View>
                   </View>
-                </View>
 
-                {/* ICON */}
-                <View className="w-10 h-10 flex-shrink-0 justify-center items-center rounded-full bg-primary">
-                  <MoveUpRight size={18} color={COLORS.common.black} />
+                  {/* ICON */}
+                  <View className="w-10 h-10 flex-shrink-0 justify-center items-center rounded-full bg-primary">
+                    <MoveUpRight size={18} color={COLORS.common.black} />
+                  </View>
                 </View>
               </View>
             </View>

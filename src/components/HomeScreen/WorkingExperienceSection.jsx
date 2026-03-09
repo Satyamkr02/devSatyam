@@ -7,33 +7,59 @@ import { Body } from '../CustomTags/Body';
 const experiences = [
   {
     company: 'Ayuvya',
-    role: 'React Native Developer',
+    role: 'Software Developer',
     type: 'Full-time',
     mode: 'Remote',
-    duration: '2025 — Present',
-    tech: ['React Native', 'Firebase', 'REST APIs'],
-    description:
-      'Building scalable mobile applications and improving user experience with modern React Native architecture.',
+    duration: 'Jan 2025 — Dec 2025',
+    tech: [
+      'React Native',
+      'Next.js',
+      'Firebase',
+      'Cashfree',
+      'Agora',
+      'Android Studio',
+      'Git | GitHub',
+      'BitBucket',
+    ],
+    description: [
+      'Worked in an **Agile team of 4-6 developers**, participating in **daily stand-ups** to track sprint progress, discuss blockers, and coordinate tasks.',
+      'Developed and maintained **20+ mobile app screens** using **React Native** while following **clean and scalable coding** practices.',
+      '**Integrated Cashfree** Checkout with **UPI payments**, improving **transaction success rate by ~15%.**',
+      '**Implemented real-time video calling** using **Agora SDK** for seamless **low-latency communication**.',
+      'Debugged and **resolved 30+ issues** in **React Native CLI projects**, particularly related to **iOS UI rendering** and functionality.',
+      '**Proposed** and helped **implement a loyalty reward system** for every purchase, **increasing repeat users and sales by ~18-22%** (currently live on **KundliTalks**).',
+      '**Learned Next.js within 2 weeks** and successfully **cloned a fully responsive production website** as a company task, implementing **modern UI components** and **responsive layouts**.',
+    ],
   },
   {
-    company: 'Imfresh',
-    role: 'Freelance Mobile App Developer',
+    company: 'MeeTooMeat',
+    role: 'React-Native App Developer',
     type: 'Freelance',
     mode: 'Remote',
-    duration: '2024 — 2025',
-    tech: ['React Native', 'Stripe', 'Realtime DB'],
-    description:
-      'Developed a production-ready mobile app including authentication, payments and real-time data sync.',
+    duration: 'Jan 2026 — Feb 2026',
+    tech: ['React Native', 'Firebase', 'NativeWind', 'Stripe', 'Realtime DB'],
+    description: [
+      'Developed a **cross-platform mobile application** using **React Native**, implementing **15+ responsive screens** with modern UI components.',
+      'Implemented **secure authentication and user account management** using **Firebase**, supporting **real-time user sessions** and account data.',
+      'Built **real-time data synchronization** using **Firebase Realtime Database**, reducing **data update latency by ~40%.**',
+      'Designed **30+ reusable UI components** using **NativeWind** to ensure **consistent styling** and faster development.',
+      'Improved **app performance and navigation flow**, reducing **screen load time by ~25%.**',
+    ],
   },
   {
-    company: 'KundliTalks',
-    role: 'Mobile App Developer',
-    type: 'Freelance',
+    company: 'CareerCreation 24/7',
+    role: 'Android Mobile App Developer',
+    type: 'Internship',
     mode: 'Remote',
     duration: '2024',
-    tech: ['React Native', 'Firebase'],
-    description:
-      'Worked on mobile app development and UI improvements to deliver a smooth and engaging user experience.',
+    tech: ['Android Studio', 'Kotlin', 'Firebase', 'XML'],
+    description: [
+      'Developed an **Android mobile application** by **replicating the CareerCreation 24/7 website UI and functionality.**',
+      'Designed and implemented **responsive mobile UI screens** using **XML and Kotlin.**',
+      'Integrated **Firebase services** for **data management and real-time updates.**',
+      'Built an **Admin panel** to manage **blog content with full CRUD operations (add, update, edit, delete).**',
+      'Improved **user experience** by optimizing **UI flow and navigation** within the app.',
+    ],
   },
 ];
 
@@ -41,13 +67,12 @@ export default function WorkingExperienceSection() {
   return (
     <View className="bg-background dark:bg-background-dark px-6">
       {/* SECTION TITLE */}
-      <View className="items-center mb-14">
-        <H1 className="text-foreground dark:text-foreground-dark text-3xl font-bold mb-4">
-          Working Experience
+      <View className="flex-col items-center gap-1 mb-14">
+        <H1 className="text-foreground dark:text-foreground-dark text-[36px]">
+          Working <H1 className="font-bold">Experience</H1>
         </H1>
-
-        <Body className="text-muted text-center">
-          Companies and teams I’ve worked with to build impactful products.
+        <Body className="text-muted dark:text-muted-dark text-sm text-center max-w-[262px]">
+          {`Companies and teams I've worked with to build impactful products.`}
         </Body>
       </View>
 
@@ -91,19 +116,35 @@ export default function WorkingExperienceSection() {
               </View>
 
               {/* DURATION */}
-              <Body className="text-muted text-sm mt-1">{item.duration}</Body>
+              <Body className="text-black dark:text-white text-sm mt-1">
+                {item.duration}
+              </Body>
 
               {/* DESCRIPTION */}
-              <Body className="text-muted leading-6 mt-2">
-                {item.description}
-              </Body>
+              {Array.isArray(item.description) ? (
+                item.description.map((point, i) => (
+                  <View key={i} className="flex-row gap-2 mt-0.5">
+                    <Body className="text-muted dark:text-muted-dark">•</Body>
+
+                    <View className="flex-1 flex-row flex-wrap">
+                      {renderBoldText(point)}
+                    </View>
+                  </View>
+                ))
+              ) : (
+                <Body className="text-muted dark:text-muted-dark text-sm mt-1">
+                  {item.description}
+                </Body>
+              )}
 
               {/* TECH STACK */}
               <View className="flex-row flex-wrap gap-2 mt-2">
-                {item.tech.map((tech, i) => (
+                {item.tech.map((tech, index) => (
                   <Body
-                    key={i}
-                    className="text-xs px-2 py-[2px] rounded bg-border dark:bg-border-dark text-foreground dark:text-foreground-dark"
+                    key={index}
+                    className={`text-xs px-2 py-[2px] rounded ${
+                      index === 0 ? 'bg-primary' : 'bg-border'
+                    } text-black`}
                   >
                     {tech}
                   </Body>
@@ -116,3 +157,23 @@ export default function WorkingExperienceSection() {
     </View>
   );
 }
+
+const renderBoldText = text => {
+  const parts = text.split(/(\*\*.*?\*\*)/g);
+
+  return (
+    <Body className="text-muted dark:text-muted-dark text-sm">
+      {parts.map((part, index) => {
+        if (part.startsWith('**') && part.endsWith('**')) {
+          return (
+            <Body key={index} className="font-bold">
+              {part.replace(/\*\*/g, '')}
+            </Body>
+          );
+        }
+
+        return part;
+      })}
+    </Body>
+  );
+};

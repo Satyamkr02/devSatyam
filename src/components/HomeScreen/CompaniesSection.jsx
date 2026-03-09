@@ -7,23 +7,26 @@ import LogoMarquee from '../Common/LogoMarquee';
 
 export default function CompaniesSection() {
   const companies = [
-    { name: 'Ayuvya', logo: require('../../assets/images/ayuvya-logo.webp') },
+    {
+      name: 'Ayuvya',
+      logo: require('../../assets/images/companies/ayuvya-logo.webp'),
+    },
     {
       name: 'Imfresh',
-      logo: require('../../assets/images/Imfresh_Logo_Black.webp'),
+      logo: require('../../assets/images/companies/Imfresh_Logo_Black.webp'),
     },
     {
       name: 'KundliTalks',
-      logo: require('../../assets/images/kundli_logo.webp'),
+      logo: require('../../assets/images/companies/kundli_logo.webp'),
     },
-    // { name: 'Ayuvya', logo: require('../../assets/images/ayuvya-logo.webp') },
-    // { name: 'Ayuvya', logo: require('../../assets/images/ayuvya-logo.webp') },
-    // {
-    //   name: 'CareerCreation247',
-    //   logo: require('../assets/companies/careercreation.png'),
-    // },
-    // { name: 'Company3', logo: require('../assets/companies/company3.png') },
-    // { name: 'Company4', logo: require('../assets/companies/company4.png') },
+    {
+      name: 'MeeTooMeat',
+      logo: require('../../assets/images/companies/meeTooMeat_logo.webp'),
+    },
+    {
+      name: 'CareerCreation24/7',
+      logo: require('../../assets/images/companies/careerCreation247_logo.webp'),
+    },
   ];
 
   return (

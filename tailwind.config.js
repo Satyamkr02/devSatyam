@@ -46,6 +46,17 @@ module.exports = {
           DEFAULT: COLORS.muted.light,
           dark: COLORS.muted.dark,
         },
+
+        card: {
+          light: COLORS.card.light,
+          dark: COLORS.card.dark,
+        },
+
+        cardBorder: {
+          light: COLORS.cardBorder.light,
+          dark: COLORS.cardBorder.dark,
+        },
+
         common: {
           black: COLORS.common.black,
           white: COLORS.common.white,

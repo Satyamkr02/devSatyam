@@ -24,6 +24,16 @@ export const COLORS = {
     dark: '#9CA3AF',
   },
 
+  card: {
+    light: '#F9FAFB',
+    dark: '#111111',
+  },
+
+  cardBorder: {
+    light: '#E5E7EB',
+    dark: '#262626',
+  },
+
   /* Common Colors (no theme dependency) */
   common: {
     black: '#000000',

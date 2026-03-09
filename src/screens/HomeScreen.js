@@ -6,19 +6,44 @@ import {
   View,
   Linking,
 } from 'react-native';
+import { Alert } from 'react-native';
 import { H1 } from '../components/CustomTags/H1';
 import { Body } from '../components/CustomTags/Body';
 import { COLORS } from '../themes/colors';
 import { SOCIAL_LINKS } from '../data/socialLinks';
 import ThemeToggle from '../components/Common/ThemeToggle';
-import { Globe, MoveUpRight } from 'lucide-react-native';
+import { Globe, Mail, MoveUpRight, Phone } from 'lucide-react-native';
 import ProjectSection from '../components/HomeScreen/ProjectSection';
 import HeroSectionImage from '../assets/images/heroSectionImage.jpg';
 import CompaniesSection from '../components/HomeScreen/CompaniesSection';
 import SpinningText from '../components/Common/SpinningText';
 import WorkingExperienceSection from '../components/HomeScreen/WorkingExperienceSection';
+import TechStackSection from '../components/HomeScreen/TechStackSection';
+import CodingStatsSection from '../components/HomeScreen/CodingStatsSection';
+import ContactCardSection from '../components/HomeScreen/ContactCardSection';
+import EducationSection from '../components/HomeScreen/EducationSection';
 
 export default function HomeScreen() {
+  const downloadCV = async () => {
+    const url =
+      'https://drive.google.com/file/d/1G7M7irlYJfQdQDFiE5WZ6uJ2YKyMncBj/view';
+
+    try {
+      await Linking.openURL(url);
+    } catch (error) {
+      Alert.alert('Error', 'Unable to open CV');
+    }
+  };
+
+  const hireMe = () => {
+    const email = 'mailto:satyamkr8280@email.com';
+    const subject = 'Hiring Inquiry';
+    const body =
+      'Hi Satyam, I would like to discuss a project/opportunity with you.';
+
+    Linking.openURL(`${email}?subject=${subject}&body=${body}`);
+  };
+
   return (
     <View className="flex-1 bg-background dark:bg-background-dark">
       <View className="absolute right-6 top-20 z-50">
@@ -55,9 +80,14 @@ export default function HomeScreen() {
             </SpinningText>
           </View>
 
-          <H1 className="text-[60px] mt-[380px] font-bold text-white dark:text-primary ml-auto">
-            {`Satyam`}
-          </H1>
+          <View className="absolute right-6 bottom-16 items-end gap-2">
+            <H1 className="text-[60px] font-bold text-white dark:text-primary bg-black/50 px-4 rounded-3xl">
+              Satyam
+            </H1>
+            <Body className="text-white dark:text-primary bg-black/50 px-4  rounded-3xl">
+              DTU'25 • Mobile App Developer
+            </Body>
+          </View>
         </ImageBackground>
 
         {/* FLOATING CARD */}
@@ -112,34 +142,79 @@ export default function HomeScreen() {
             </Body>
           </View>
 
-          <View className="flex-row mt-8 px-6 gap-2 ">
-            <View className="flex-row h-[45px] gap-3 items-center justify-center rounded-full bg-primary py-2 px-1">
-              <H1 className="ml-4 text-black font-bold">Get Started</H1>
-              <View className="w-10 h-10 flex justify-center items-center rounded-full bg-black overflow-hidden">
-                <MoveUpRight size={18} color={COLORS.primary.light} />
+          <View className="mt-6 px-6">
+            {/* Primary Actions */}
+            <View className="flex-row gap-3">
+              {/* Download CV */}
+              <Pressable
+                onPress={downloadCV}
+                className="flex-row items-center justify-between bg-primary rounded-full gap-3 px-4 py-2"
+              >
+                <H1 className="text-black font-bold">Download CV</H1>
+
+                <View className="w-9 h-9 rounded-full bg-black items-center justify-center">
+                  <MoveUpRight size={16} color={COLORS.primary.light} />
+                </View>
+              </Pressable>
+
+              {/* Hire Me */}
+              <Pressable
+                onPress={hireMe}
+                className="flex-row items-center justify-between bg-common-grayLight dark:bg-border-dark rounded-full gap-3 px-4 py-2"
+              >
+                <H1 className="text-black dark:text-white">Hire Me</H1>
+
+                <View className="w-9 h-9 rounded-full bg-black items-center justify-center">
+                  <MoveUpRight size={16} color={COLORS.common.grayLight} />
+                </View>
+              </Pressable>
+            </View>
+
+            {/* Contact Info */}
+            <View className="mt-6 flex-row justify-between gap-4">
+              {/* EMAIL */}
+              <Pressable
+                onPress={() =>
+                  Linking.openURL(
+                    'mailto:satyamkr8280@email.com?subject=Hiring Inquiry&body=Hi Satyam, I would like to discuss an opportunity with you.',
+                  )
+                }
+                className="flex-row items-center gap-2"
+              >
+                <Mail size={16} color={COLORS.muted.light} />
+                <Body className="text-muted dark:text-muted-dark text-sm">
+                  satyamkr8280@email.com
+                </Body>
+              </Pressable>
+
+              {/* PHONE */}
+              <Pressable
+                onPress={() => Linking.openURL('tel:+919876543210')}
+                className="flex-row items-center gap-2"
+              >
+                <Phone size={16} color={COLORS.muted.light} />
+                <Body className="text-muted dark:text-muted-dark text-sm">
+                  +91 9876543210
+                </Body>
+              </Pressable>
+            </View>
+
+            {/* Status Row */}
+            <View className="flex-row justify-between items-center mt-6">
+              <View className="flex-row items-center gap-2">
+                <Globe size={16} color={COLORS.muted.light} />
+
+                <Body className="text-muted dark:text-muted-dark text-sm">
+                  Available <Body className="font-semibold">Worldwide</Body>
+                </Body>
               </View>
-            </View>
 
-            <View className="flex-row h-[45px] gap-3 items-center justify-center rounded-full bg-common-grayLight py-2 px-1">
-              <H1 className="ml-4 text-black">My Works</H1>
-              <View className="w-10 h-10 flex justify-center items-center rounded-full bg-black overflow-hidden">
-                <MoveUpRight size={18} color={COLORS.common.grayLight} />
-              </View>
-            </View>
-          </View>
-
-          <View className="flex-row justify-between mt-5 px-6 gap-2 ">
-            <View className="flex-row h-[45px] gap-1 items-center justify-center rounded-full">
-              <Globe size={14} color={COLORS.muted.light} />
-              <H1 className="text-muted text-sm font-bold">
-                Available to{''}{' '}
-                <Body className="text-base font-bold">Worldwide</Body>
-              </H1>
-            </View>
-
-            <View className="flex-row h-[45px] gap-1 items-center justify-center rounded-full">
-              <H1 className="text-muted text-sm">Contact Me</H1>
-              <MoveUpRight size={14} color={COLORS.muted.light} />
+              <Pressable className="flex-row items-center gap-1">
+                <Body className="text-muted dark:text-muted-dark text-sm">
+                  Contact Me
+                </Body>
+                <MoveUpRight size={14} color={COLORS.muted.light} />
+              </Pressable>
             </View>
           </View>
           <View className="flex w-full mt-[80px]">
@@ -150,6 +225,18 @@ export default function HomeScreen() {
           </View>
           <View className="flex w-full mt-[80px]">
             <ProjectSection />
+          </View>
+          <View className="flex w-full mt-[80px]">
+            <TechStackSection />
+          </View>
+          {/* <View className="flex w-full mt-[80px]">
+            <CodingStatsSection />
+          </View> */}
+          <View className="flex w-full mt-[80px]">
+            <EducationSection />
+          </View>
+          <View className="flex w-full mt-[80px]">
+            <ContactCardSection />
           </View>
         </View>
       </ScrollView>
