@@ -6,26 +6,29 @@ import { MoveUpRight } from 'lucide-react-native';
 import { COLORS } from '../../themes/colors';
 import { PROJECTS } from '../../data/projects';
 import { useNavigation } from '@react-navigation/native';
-import LinearGradient from 'react-native-linear-gradient';
 
 export default function ProjectSection() {
   const navigation = useNavigation();
+
   return (
     <View className="flex">
-      <View className="flex-col items-center gap-1">
+      {/* Section Title */}
+      <View className="flex-col items-center gap-2">
         <H1 className="text-foreground dark:text-foreground-dark text-5xl">
           Projects <H1 className="font-bold">Done</H1>
         </H1>
-        <Body className="text-muted dark:text-muted-dark text-sm text-center max-w-[262px]">
-          A showcase of some of my best works,highlighting my skills and
-          experience, including both personal and client
+
+        <Body className="text-muted dark:text-muted-dark text-sm text-center max-w-[260px]">
+          A showcase of some of my best works highlighting my skills and
+          experience including both personal and client projects.
         </Body>
       </View>
 
-      <View className="flex-col w-full mt-5 gap-5">
-        {PROJECTS.map((project, index) => (
+      {/* Project Cards */}
+      <View className="flex-col w-full mt-6 gap-5">
+        {PROJECTS.map(project => (
           <Pressable
-            key={index}
+            key={project.id}
             onPress={() =>
               navigation.navigate('ProjectDetails', {
                 projectId: project.id,
@@ -33,45 +36,43 @@ export default function ProjectSection() {
             }
           >
             <View className="flex-col bg-grayLight/50 border border-border dark:border-primary/50 rounded-2xl overflow-hidden mx-3">
-              {/* Image */}
+              {/* Project Image */}
               <Image
-                source={{ uri: project.image }}
+                source={{ uri: project?.coverImage }}
                 className="w-full h-[180px]"
+                resizeMode="cover"
               />
 
-              {/* Gradient Background */}
-              <View className="relative">
-                {/* Gradient Overlay */}
-                <View className="absolute inset-0 bg-primary/5" />
+              {/* Content */}
+              <View className="flex-row justify-between px-4 py-4">
+                {/* Left Content */}
+                <View className="flex-1 pr-3">
+                  <Body className="text-foreground dark:text-foreground-dark text-2xl font-bold">
+                    {project.title}
+                  </Body>
 
-                {/* Content */}
-                <View className="flex-row justify-between px-4 py-4">
-                  {/* LEFT CONTENT */}
-                  <View className="flex-1 flex-col pr-3">
-                    <Body className="text-foreground dark:text-foreground-dark text-3xl font-bold">
-                      {project.title}
-                    </Body>
+                  <Body className="text-muted dark:text-muted-dark text-sm mt-1">
+                    {project?.shortDescription}
+                  </Body>
 
-                    <Body className="text-foreground dark:text-foreground-dark text-sm">
-                      {project.description}
-                    </Body>
-
-                    <View className="mt-2 flex-row flex-wrap gap-1">
-                      {project.tags.map((tag, index) => (
-                        <View
-                          key={index}
-                          className="bg-primary px-3 py-1 rounded-full"
-                        >
-                          <Text className="text-xs text-black">{tag}</Text>
-                        </View>
-                      ))}
-                    </View>
+                  {/* TechStack */}
+                  <View className="mt-3 flex-row flex-wrap gap-2">
+                    {project.techStack.map((tech, index) => (
+                      <View
+                        key={index}
+                        className="bg-primary/90 px-3 py-1 rounded-full"
+                      >
+                        <Text className="text-xs text-black font-medium">
+                          {tech}
+                        </Text>
+                      </View>
+                    ))}
                   </View>
+                </View>
 
-                  {/* ICON */}
-                  <View className="w-10 h-10 flex-shrink-0 justify-center items-center rounded-full bg-primary">
-                    <MoveUpRight size={18} color={COLORS.common.black} />
-                  </View>
+                {/* Arrow Icon */}
+                <View className="w-10 h-10 justify-center items-center rounded-full bg-primary">
+                  <MoveUpRight size={18} color={COLORS.common.black} />
                 </View>
               </View>
             </View>
@@ -79,12 +80,14 @@ export default function ProjectSection() {
         ))}
       </View>
 
-      <View className="mt-10 mx-auto flex-row h-[45px] gap-3 items-center justify-center rounded-full bg-primary py-2 px-1">
-        <H1 className="ml-4 text-black font-bold">View All Projects</H1>
-        <View className="w-10 h-10 flex justify-center items-center rounded-full bg-black overflow-hidden">
+      {/* View All Button */}
+      <Pressable className="mt-10 mx-auto flex-row h-[45px] gap-3 items-center justify-center rounded-full bg-primary py-2 px-4">
+        <H1 className="text-black font-bold">View All Projects</H1>
+
+        <View className="w-10 h-10 justify-center items-center rounded-full bg-black">
           <MoveUpRight size={18} color={COLORS.primary.light} />
         </View>
-      </View>
+      </Pressable>
     </View>
   );
 }
