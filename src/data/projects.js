@@ -1,3 +1,5 @@
+import { imageLinks } from '../utils/imageLinks';
+
 export const PROJECTS = [
   {
     id: 'anyo-chat',
@@ -16,6 +18,18 @@ export const PROJECTS = [
       'Firebase Realtime Database',
       'NativeWind',
     ],
+    innerTechStackImages: [
+      imageLinks.reactNative,
+      imageLinks.androidStudio,
+      imageLinks.gitHub,
+    ],
+
+    outerTechStackImages: [
+      imageLinks.html,
+      imageLinks.css,
+      imageLinks.javascript,
+      imageLinks.nextJs,
+    ],
 
     role: 'Designed and developed the full mobile application including UI, authentication flow, and real-time messaging system.',
 
@@ -33,9 +47,11 @@ export const PROJECTS = [
       'https://images.unsplash.com/photo-1611162618071-b39a2ec055fb',
     ],
 
-    projectUrl: 'https://example.com',
+    androidApk: 'https://your-domain.com/app-release.apk',
+    iosApp: 'https://apps.apple.com/app/id123456',
 
-    repoUrl: 'https://github.com/yourrepo',
+    repoUrl: 'https://github.com/...',
+    projectUrl: 'https://...',
   },
 
   {
@@ -50,6 +66,17 @@ export const PROJECTS = [
       'https://cdn.dribbble.com/userupload/43169772/file/original-6c9a843b6d8d1b393cf08bf2c3a330e1.png?resize=752x&vertical=center',
 
     techStack: ['Next.js', 'Tailwind CSS', 'Stripe', 'MongoDB'],
+    innerTechStackImages: [
+      imageLinks.nextJs,
+      imageLinks.tailwindCss,
+      imageLinks.gitHub,
+    ],
+
+    outerTechStackImages: [
+      imageLinks.html,
+      imageLinks.css,
+      imageLinks.javascript,
+    ],
 
     role: 'Built the complete e-commerce platform including product listing, checkout flow, and UI design.',
 
@@ -66,8 +93,10 @@ export const PROJECTS = [
       'https://images.unsplash.com/photo-1520975922203-b4dc1a5f5f0b',
     ],
 
-    projectUrl: 'https://example.com',
+    androidApk: 'https://your-domain.com/app-release.apk',
+    iosApp: 'https://apps.apple.com/app/id123456',
 
-    repoUrl: 'https://github.com/yourrepo',
+    repoUrl: 'https://github.com/...',
+    projectUrl: 'https://...',
   },
 ];

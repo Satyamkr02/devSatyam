@@ -9,8 +9,8 @@ const experiences = [
     company: 'Ayuvya',
     role: 'Software Developer',
     type: 'Full-time',
-    mode: 'Remote',
-    duration: 'Jan 2025 — Dec 2025',
+    mode: 'On Site',
+    duration: 'Mar 2025 — Dec 2025',
     tech: [
       'React Native',
       'Next.js',

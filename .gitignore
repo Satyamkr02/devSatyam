@@ -38,6 +38,9 @@ local.properties
 # node.js
 #
 node_modules/
+.env
+ios/Pods/
+ios/Podfile.lock
 npm-debug.log
 yarn-error.log
 
